@@ -21,10 +21,10 @@ def browser(request):
     browser_name = request.config.getoption("browser_name")
 
     if browser_name == "firefox":
-        print(f"\nstart {browser_name} browser for test..")
+        print(f"\nstart firefox browser for test..")
         browser = webdriver.Firefox(service=Service(GeckoDriverManager().install()))
     elif browser_name == "chrome":
-        print("\nstart firefox browser for test..")
+        print("\nstart chrome browser for test..")
         browser = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
     else:
         joined_browsers = ', '.join(supported_browsers.keys())
