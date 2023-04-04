@@ -3,29 +3,18 @@ from selenium.webdriver.common.by import By
 
 class BasePageLocators:
     SPINNER = (By.CSS_SELECTOR, ".spinner")
-    LOGO_REQRES = (By.XPATH, "//a[@href='/']")
-    LOGO_FAIL_REQRES = (By.XPATH, "//a[@href='123']")
+
+    MAIN_SEARCH_BUTTON = (By.XPATH, "//span[@class='supernova-search-submit-text']")
+    MAIN_SEARCH_INPUT = (By.XPATH, "//input[@id='a11y-search-input'][1]")
+    MAIN_LOGIN_BUTTON = (By.XPATH, "//a[@class='supernova-button']")
 
 
-class MainPageLocators(BasePageLocators):
-    LIST_OF_ALL_REQUESTS = (By.XPATH, "//div[@class='endpoints']")
-    FAKE_LIST_OF_ALL_REQUESTS = (By.XPATH, "//div[@class='endpoints']")
+class LoginPageLocators(BasePageLocators):
+    LOGIN_WITH_PASS = (By.XPATH, "//button[@data-qa='expand-login-by-password']")
+    LOGIN_USERNAME = (By.XPATH, "//input[@placeholder='Электронная почта или телефон']")
+    LOGIN_PASS = (By.XPATH, "//input[@placeholder='Пароль']")
 
-    LIST_USERS = (By.XPATH, "//li[@data-id='users']")
-    SINGLE_USER = (By.XPATH, "//li[@data-id='users-single']")
-    SINGLE_USER_NOT_FOUND = (By.XPATH, "//li[@data-id='users-single-not-found']")
-    LIST_RESOURCE = (By.XPATH, "//li[@data-id='unknown']")
-    SINGLE_RESOURCE = (By.XPATH, "//li[@data-id='unknown-single']")
-    SINGLE_RESOURCE_NOT_FOUND = (By.XPATH, "//li[@data-id='unknown-single-not-found']")
-    POST_CREATE = (By.XPATH, "//li[@data-id='post']")
-    PUT_UPDATE = (By.XPATH, "//li[@data-id='put']")
-    PATCH_UPDATE = (By.XPATH, "//li[@data-id='patch']")
-    DELETE_USER = (By.XPATH, "//li[@data-id='delete']")
-    REGISTER_SUCCESSFUL = (By.XPATH, "//li[@data-id='register-successful']")
-    REGISTER_UNSUCCESSFUL = (By.XPATH, "//li[@data-id='register-unsuccessful']")
-    LOGIN_SUCCESSFUL = (By.XPATH, "//li[@data-id='login-successful']")
-    LOGIN_UNSUCCESSFUL = (By.XPATH, "//li[@data-id='login-unsuccessful']")
-    DELAYED_RESPONSE = (By.XPATH, "//li[@data-id='delay']")
 
-    RESPONSE_CODE = (By.XPATH, "//span[@class='response-code']")
-    JSON_TEXT = (By.CSS_SELECTOR, "pre[data-key='output-response']")
+class SearchPageLocators(BasePageLocators):
+    SEARCH_INPUT = (By.XPATH, "//input[@id='a11y-search-input']")
+    SEARCH_BUTTON = (By.XPATH, "//button[@data-qa='search-button']")
